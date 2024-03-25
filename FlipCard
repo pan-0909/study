@@ -1,0 +1,65 @@
+<!--
+ * @Author: panrunjun
+ * @Date: 2023-01-09 17:43:23
+ * @LastEditors: Do not edit
+ * @LastEditTime: 2024-03-25 22:38:09
+ * @Description: 翻转卡片
+ * @FilePath: 
+-->
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>翻转卡片</title>
+</head>
+
+<body>
+    <div>
+        <div id="box">
+            <img class="cover"
+                src="https://gss0.baidu.com/-Po3dSag_xI4khGko9WTAnF6hhy/zhidao/pic/item/6a63f6246b600c336488b44c1d4c510fd8f9a145.jpg" />
+            <img class="back"
+                src="https://img.zcool.cn/community/01cdd155429fc70000019ae9ee9db1.jpg@1280w_1l_2o_100sh.jpg" />
+        </div>
+    </div>
+</body>
+<style>
+    #box {
+        margin-left: 400px;
+        margin-top: 100px;
+        perspective: 1400px;
+    }
+
+    /* 两个盒子img */
+    .cover,
+    .back {
+        width: 350px;
+        height: 500px;
+        transition: all 1s;
+        position: absolute;
+        box-shadow: -10px 10px 10px 0px #666;
+        backface-visibility: hidden;
+        
+    }
+
+    /* 第一个盒子img */
+    .cover {
+        transform: rotateY(0deg);
+    }
+
+    /* 第二个盒子img */
+    .back {
+        transform: rotateY(-180deg);
+    }
+
+    /* 鼠标移动的第二个盒子 */
+    #box:hover .cover {
+        transform: rotateY(180deg);
+    }
+
+    /* 鼠标移动的第二个盒子 */
+    #box:hover .back {
+        transform: rotateY(0deg);
+    }
+</style>
